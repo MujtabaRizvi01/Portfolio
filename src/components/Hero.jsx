@@ -1,8 +1,34 @@
 import { motion } from "framer-motion";
-
+import Typed from "typed.js";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
+import React from 'react';
+import "../../css/external.css";
 
+function MyComponent() {
+  const el = React.useRef(null);
+
+  React.useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: [
+        '3D visuals', 
+        'Web applications',
+        'Mobile applications', 
+      ], 
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true, 
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
+  return (
+    <span ref={el} className="auto-type"></span>
+  );
+}
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
@@ -14,14 +40,14 @@ const Hero = () => {
           <div className='w-1 sm:h-80 h-40 violet-gradient' />
         </div>
 
-        <div>
+        <div className="container">
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Adrian</span>
-          </h1>
+            Hi, I&apos;m <span className='text-[#915EFF]'>Mujtaba</span>
+            
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
-            interfaces and web applications
+            I develop <MyComponent /> <br className='sm:block hidden' />
           </p>
+          </h1>
         </div>
       </div>
 

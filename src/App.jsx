@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import { About, Contact, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas,Experience } from "./components";
+// import Avatar from "./components/Avatar";
 
 const App = () => {
   return (
